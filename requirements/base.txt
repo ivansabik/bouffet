@@ -1,0 +1,29 @@
+# Core
+django-configurations==2.3.1
+Django==3.2.10
+pytz==2021.3
+
+# For the persistence stores
+dj-database-url==0.5.0
+psycopg2-binary==2.9.2
+
+# Model Tools
+django-model-utils==4.2.0
+django-unique-upload==0.2.1
+
+# Rest apis
+django-filter==21.1
+djangorestframework==3.13.1
+Markdown==3.3.6
+
+# Static and Media Storage
+boto3==1.20.26
+django-storages==1.12.3
+
+# Foodeliverty
+django-auditlog==1.0a1
+django-constance==2.8.0
+django-enumfield==2.0.2
+django-phonenumber-field==6.0.0
+django-taggit==2.0.0
+phonenumbers==8.12.40

@@ -1,4 +1,8 @@
-# Foodeliverty
+# foodeliverty
+
+[![Build Status](https://travis-ci.org/poyo-brands/foodeliverty.svg?branch=master)](https://travis-ci.org/poyo-brands/foodeliverty)
+
+The REST API for foodeliverty. Check out the project's [documentation](http://poyo-brands.github.io/foodeliverty/).
 
 Foodeliverty is an opinionated ordering and delivery app with first-class support for Machine Learning and Analytics.
 
@@ -9,31 +13,36 @@ Foodeliverty can be accesed via:
 - Facebook App (only for Customers)
 - Mobile Native App (only for Drivers and Customers)
 
-### Submodules
+See the [docs](./docs) section for development instructions.
+# Prerequisites
+
+- [Docker](https://docs.docker.com/docker-for-mac/install/)  
+
+# Submodules
 
 - Orders
 - Delivery
 - CMS
 - Events (as in real-time event streaming and processing)
 
-### Third-party integrations
+# Third-party integrations
 
-#### Auth
+## Auth
 
 - Facebook
 - Google
 - Instagram
 
-#### Sales promotions
+## Sales promotions
 
 - Voucherify
 
-#### Payments
+## Payments
 
 - Stripe
 - PayPal
 
-#### Push Notifications
+## Push Notifications
 
 - OneSignal
 
@@ -42,15 +51,15 @@ Foodeliverty can be accesed via:
 - SendGrid for email
 - Twilio for phone number
 
-#### Support and Live Chat
+## Support and Live Chat
 
 - Embed script (supports tawk.to, Zoho SalesIQ, elfsight and more free-tier)
-#### Outgoing Events
+## Outgoing Events
 
 - HTTP Webhooks
 - Custom Code (via AWS Lambda)
 
-### Machine learning features
+# Machine learning features
 
 - Suggest items in the menu
 - Predict time to complete order

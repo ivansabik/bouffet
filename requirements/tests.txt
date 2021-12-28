@@ -1,0 +1,6 @@
+# Testing
+coverage==6.2
+django-nose==1.4.7
+factory-boy==3.2.1
+mock==4.0.3
+nose-progressive==1.5.2

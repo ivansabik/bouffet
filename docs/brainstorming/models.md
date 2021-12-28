@@ -1,68 +1,5 @@
 # Models
 
-## Store
-
-- city
-- country
-- created_at
-- currency
-- custom_labels
-- delivery_fee (audited field)
-- delivery_menu_url
-- delivery_radius_km
-- fulfillment_types
-- holiday_schedules
-- id
-- image_url
-- lat
-- lon
-- menu_categories
-- name
-- open_schedules
-- phone_numbers
-- street_address
-- timezone
-- updated_at
-- valid_until
-- zip_code
-
-## Store Schedule Open
-
-- created_at
-- day
-- end_time
-- id
-- start_time
-- updated_at
-
-## Store Schedule Holiday
-
-- created_at
-- day
-- holiday_name
-- id
-- month
-- updated_at
-
-## Menu Item
-
-- category
-- price (audited field)
-- custom_labels
-- description
-- id
-- image_url
-- name
-- sku
-- stock_status (audited field)
-
-## Menu Category
-
-- id
-- name
-
-Two out of the box: Extra (for order-wide items like Bag, Forks, Napkins etc.) and Additional (Cheese, Bacon, Pickles, Onion, etc.)
-
 ## Order
 
 - cancel_reason
@@ -139,6 +76,7 @@ Two out of the box: Extra (for order-wide items like Bag, Forks, Napkins etc.) a
 - id
 - payment_method
 - vendor_response
+
 ## Payment Method
 
 - id

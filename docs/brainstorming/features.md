@@ -11,6 +11,10 @@
 - Add store schedule holiday for a given day
 - Delete store schedule holiday for a given day
 - Update store schedule holiday for a given day
+- Mark menu item as available
+- Mark menu item as unavailable
+- View menu items
+- Add menu item
 
 # Ordering
 

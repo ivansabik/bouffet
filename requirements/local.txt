@@ -1,0 +1,6 @@
+# Developer Tools
+black==21.12b0
+flake8==4.0.1
+gunicorn==20.1.0
+mkdocs==1.2.3
+newrelic==7.2.4.171
