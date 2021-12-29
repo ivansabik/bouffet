@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from taggit.serializers import TaggitSerializer, TagListSerializerField
 
 from .models import Holiday, MenuCategory, MenuItem, OpeningHour, Store
 
@@ -28,8 +27,7 @@ class OpeningHourSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class StoreSerializer(TaggitSerializer, serializers.ModelSerializer):
-    custom_labels = TagListSerializerField()
+class StoreSerializer(serializers.ModelSerializer):
     holidays = HolidaySerializer(many=True)
     menu_items = MenuItemSerializer(many=True)
     opening_hours = OpeningHourSerializer(many=True)

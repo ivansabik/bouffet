@@ -30,7 +30,6 @@ HTTP 200 OK
     "results": [
         {
             "id": "c54faf63-7d90-402b-a697-d2fd466b0cd9",
-            "custom_labels": [],
             "created_at": "2021-12-29T03:27:32+0000",
             "email": "spoomoni@poyobrands.com",
             "email_verified": false,

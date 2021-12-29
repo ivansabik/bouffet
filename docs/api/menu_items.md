@@ -24,23 +24,43 @@ HTTP 200 OK
 
 ```json
 {
-    "count": 1,
+    "count": 2,
     "next": null,
     "previous": null,
     "results": [
         {
-            "id": "97b37633-4f6e-493b-b9b8-32829e93b5a6",
+            "id": "b9f52ec2-4cde-4686-879c-4ff96429a156",
             "available": true,
-            "cost": 100.0,
-            "created_at": "2021-12-28T23:30:47+0000",
-            "description": "Test item",
+            "cost": null,
+            "created_at": "2021-12-29T04:35:10+0000",
+            "description": "",
+            "image_url": null,
+            "item_type": 1,
+            "name": "Extra cheese",
+            "price": 15.0,
+            "select_options": null,
+            "sku": null,
+            "updated_at": "2021-12-29T04:35:10+0000",
+            "category": null,
+            "children_items": []
+        },
+        {
+            "id": "37e2b0ba-ec39-42e9-b0e6-aa42bd37bb10",
+            "available": true,
+            "cost": null,
+            "created_at": "2021-12-29T04:35:19+0000",
+            "description": "",
             "image_url": null,
             "item_type": 0,
-            "name": "Test item",
-            "price": 150.0,
-            "sku": "TEST",
-            "updated_at": "2021-12-28T23:30:47+0000",
-            "category": "939d2e58-628d-47fe-876b-886f7c8e0e1a"
+            "name": "Mac And Cheese",
+            "price": 80.0,
+            "select_options": null,
+            "sku": null,
+            "updated_at": "2021-12-29T04:35:19+0000",
+            "category": "221d46f2-7d25-41f4-a8aa-0dfe789445eb",
+            "children_items": [
+                "b9f52ec2-4cde-4686-879c-4ff96429a156"
+            ]
         }
     ]
 }

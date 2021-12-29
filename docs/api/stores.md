@@ -26,7 +26,6 @@ HTTP 200 OK
     "results": [
         {
             "id": "87a6f496-57c1-4eca-af84-47ca2966617a",
-            "custom_labels": [],
             "holidays": [
                 {
                     "id": "00327693-6e8f-4d73-82ac-26f2157851a1",

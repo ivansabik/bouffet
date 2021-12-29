@@ -20,31 +20,20 @@ HTTP 200 OK
 
 ```json
 {
-    "count": 2,
+    "count": 1,
     "next": null,
     "previous": null,
     "results": [
         {
-            "id": "0236ccaa-819e-481e-967f-01cd9f7d6435",
-            "created_at": "2021-12-29T04:04:04+0000",
-            "updated_at": "2021-12-29T04:04:04+0000",
+            "id": "2f6b07af-ebe6-4904-9117-0d4c88e035f2",
+            "created_at": "2021-12-29T04:37:41+0000",
+            "updated_at": "2021-12-29T04:37:41+0000",
             "notes": "",
             "quantity": 1,
-            "total_amount": null,
-            "menu_item": "7df649a6-0777-406f-90ac-656e1f7744bc",
+            "selected_option": null,
+            "total_amount": 80.0,
+            "menu_item": "37e2b0ba-ec39-42e9-b0e6-aa42bd37bb10",
             "children_items": []
-        },
-        {
-            "id": "225cb929-4fd8-4f48-af91-0ea92d1e8acc",
-            "created_at": "2021-12-29T04:04:15+0000",
-            "updated_at": "2021-12-29T04:04:15+0000",
-            "notes": "",
-            "quantity": 1,
-            "total_amount": null,
-            "menu_item": "ea02ef9d-74b5-47af-91fb-86f9c8628867",
-            "children_items": [
-                "0236ccaa-819e-481e-967f-01cd9f7d6435"
-            ]
         }
     ]
 }

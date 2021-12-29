@@ -24,7 +24,6 @@ class Common(Configuration):
         "phonenumber_field",
         "rest_framework",  # utilities for rest apis
         "rest_framework.authtoken",  # token authentication
-        "taggit",
         # Your apps
         "foodeliverty_api.orders",
         "foodeliverty_api.stores",

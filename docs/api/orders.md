@@ -25,16 +25,15 @@ HTTP 200 OK
     "previous": null,
     "results": [
         {
-            "id": "497dae06-66e3-486f-9c55-8594f08cfb1b",
-            "custom_labels": [],
+            "id": "d9913197-e6a4-48dd-85d0-9235004322fb",
             "delivery_tracking_points": null,
             "cancel_reason": "",
             "cancelled_at": null,
-            "created_at": "2021-12-29T03:35:34+0000",
+            "created_at": "2021-12-29T04:38:57+0000",
             "delivery_appt_suite_number": null,
             "delivery_city": "Mexico City",
             "delivery_contact_phone": "+525511111111",
-            "delivery_fee": null,
+            "delivery_fee": 20.0,
             "delivery_lat": 38.8951,
             "delivery_lon": -77.0364,
             "delivery_notes": "",
@@ -49,11 +48,13 @@ HTTP 200 OK
             "share_url": null,
             "started_at": null,
             "status": 0,
-            "tip_amount": null,
-            "total_order_amount": null,
-            "updated_at": "2021-12-29T03:35:34+0000",
-            "delivery_courier": null,
-            "order_items": []
+            "tip_amount": 5.0,
+            "total_order_amount": 85.0,
+            "updated_at": "2021-12-29T04:38:57+0000",
+            "delivery_courier": "b0500cdd-4df9-4469-b0fb-ea49f9f7c8fd",
+            "order_items": [
+                "2f6b07af-ebe6-4904-9117-0d4c88e035f2"
+            ]
         }
     ]
 }

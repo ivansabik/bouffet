@@ -5,7 +5,6 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django_enumfield import enum
 from phonenumber_field.modelfields import PhoneNumberField
-from taggit.managers import TaggableManager
 
 
 class Holiday(models.Model):
@@ -41,16 +40,16 @@ class MenuItemType(enum.Enum):
 class MenuItem(models.Model):
     available = models.BooleanField(default=True)
     category = models.ForeignKey(MenuCategory, on_delete=models.SET_NULL, blank=True, null=True)
-    children_items = models.ManyToManyField("self", symmetrical=False, blank=True, null=True)
+    children_items = models.ManyToManyField("self", symmetrical=False, blank=True)
     cost = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    custom_labels = TaggableManager(blank=True)
     description = models.TextField(blank=True, null=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     image_url = models.URLField(max_length=200, blank=True, null=True)
     item_type = enum.EnumField(MenuItemType, default=MenuItemType.MAIN)
     name = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    select_options = models.JSONField(blank=True, null=True)
     sku = models.CharField(max_length=100, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
@@ -75,7 +74,6 @@ class Store(models.Model):
     country = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     currency = models.CharField(max_length=3)
-    custom_labels = TaggableManager(blank=True)
     delivery_fee = models.DecimalField(max_digits=6, decimal_places=2)
     delivery_menu_url = models.URLField(max_length=200, blank=True, null=True)
     delivery_radius_km = models.DecimalField(max_digits=6, decimal_places=2)

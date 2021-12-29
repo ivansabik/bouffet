@@ -4,14 +4,12 @@ from auditlog.registry import auditlog
 from django.db import models
 from django_enumfield import enum
 from phonenumber_field.modelfields import PhoneNumberField
-from taggit.managers import TaggableManager
 
 from ..stores.models import MenuItem
 
 
 class Customer(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    custom_labels = TaggableManager(blank=True)
     email = models.EmailField(max_length=100)
     email_verified = models.BooleanField(default=False)
     first_name = models.CharField(max_length=50)
@@ -44,7 +42,6 @@ class OrderFulfillmentType(enum.Enum):
 
 class DeliveryCourier(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    custom_labels = TaggableManager(blank=True)
     first_name = models.CharField(max_length=50)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     last_name = models.CharField(max_length=50)
@@ -56,13 +53,14 @@ auditlog.register(DeliveryCourier)
 
 
 class OrderItem(models.Model):
-    children_items = models.ManyToManyField("self", symmetrical=False, blank=True, null=True)
+    children_items = models.ManyToManyField("self", symmetrical=False, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     updated_at = models.DateTimeField(auto_now_add=True)
     menu_item = models.ForeignKey(MenuItem, on_delete=models.SET_NULL, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     quantity = models.PositiveIntegerField(default=1)
+    selected_option = models.CharField(max_length=50, blank=True, null=True)
     total_amount = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
 
 
@@ -73,7 +71,6 @@ class Order(models.Model):
     cancel_reason = models.TextField(blank=True, null=True)
     cancelled_at = models.DateTimeField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    custom_labels = TaggableManager(blank=True)
     delivery_appt_suite_number = models.CharField(max_length=10, blank=True, null=True)
     delivery_city = models.CharField(max_length=100)
     delivery_contact_phone = PhoneNumberField()

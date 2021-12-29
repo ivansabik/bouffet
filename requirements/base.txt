@@ -25,5 +25,4 @@ django-auditlog==1.0a1
 django-constance==2.8.0
 django-enumfield==2.0.2
 django-phonenumber-field==6.0.0
-django-taggit==2.0.0
 phonenumbers==8.12.40

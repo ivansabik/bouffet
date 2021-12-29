@@ -30,7 +30,6 @@ HTTP 200 OK
     "results": [
         {
             "id": "b50ed36a-8a99-4c90-b084-ce006fea1f73",
-            "custom_labels": [],
             "created_at": "2021-12-29T00:13:17+0000",
             "first_name": "Johnny",
             "last_name": "Ze",
