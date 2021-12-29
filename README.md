@@ -9,9 +9,9 @@ Foodeliverty is an opinionated ordering and delivery app with first-class suppor
 Foodeliverty focuses on providing core services for orders and delivery operations and management, while relying on third-party integrations for doing other things.
 
 Foodeliverty can be accesed via:
-- Web App (for Admin, Drivers and Customers)
+- Web App (for Admin, Delivery Courier and Customers)
 - Facebook App (only for Customers)
-- Mobile Native App (only for Drivers and Customers)
+- Mobile Native App (only for Delivery Courier and Customers)
 
 See the [docs](./docs) section for development instructions.
 # Prerequisites
