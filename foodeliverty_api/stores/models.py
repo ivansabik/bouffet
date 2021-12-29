@@ -22,7 +22,7 @@ auditlog.register(Holiday)
 
 class MenuCategory(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     image_url = models.URLField(max_length=200, blank=True, null=True)
     name = models.CharField(max_length=50)
@@ -40,17 +40,18 @@ class MenuItemType(enum.Enum):
 
 class MenuItem(models.Model):
     available = models.BooleanField(default=True)
-    category = models.ForeignKey(MenuCategory, on_delete=models.SET_NULL, null=True)
-    cost = models.DecimalField(max_digits=6, decimal_places=2)
+    category = models.ForeignKey(MenuCategory, on_delete=models.SET_NULL, blank=True, null=True)
+    children_items = models.ManyToManyField("self", symmetrical=False, blank=True, null=True)
+    cost = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     custom_labels = TaggableManager(blank=True)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     image_url = models.URLField(max_length=200, blank=True, null=True)
     item_type = enum.EnumField(MenuItemType, default=MenuItemType.MAIN)
     name = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    sku = models.CharField(max_length=100)
+    sku = models.CharField(max_length=100, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
 

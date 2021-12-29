@@ -1,7 +1,6 @@
 # Stores
 Supports registering, viewing, and updating stores.
 
-
 ## View stores
 
 **Request**:

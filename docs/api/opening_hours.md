@@ -1,7 +1,6 @@
 # Opening Hours
 Supports registering, viewing, and updating store open schedules.
 
-
 ## View opening hours
 
 **Request**:

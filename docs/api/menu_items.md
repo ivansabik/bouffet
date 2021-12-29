@@ -1,7 +1,6 @@
 # Menu Item
 Supports registering, viewing, and updating menu items.
 
-
 ## View meny categories
 
 **Request**:

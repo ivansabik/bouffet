@@ -1,7 +1,6 @@
 # Delivery Couriers
 Supports registering, viewing, and updating delivery couriers.
 
-
 ## View delivery couriers
 
 **Request**:

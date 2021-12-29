@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from taggit.serializers import TaggitSerializer, TagListSerializerField
 
-from .models import Customer, DeliveryCourier, DeliveryTrackingPoint, Order
+from .models import Customer, DeliveryCourier, DeliveryTrackingPoint, Order, OrderItem
 
 
 class CustomerSerializer(TaggitSerializer, serializers.ModelSerializer):
@@ -32,4 +32,10 @@ class OrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
+        fields = "__all__"
+
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderItem
         fields = "__all__"

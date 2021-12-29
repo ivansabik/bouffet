@@ -1,7 +1,6 @@
 # Menu Category
 Supports registering, viewing, and updating menu categories.
 
-
 ## View menu categories
 
 **Request**:

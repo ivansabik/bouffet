@@ -1,7 +1,6 @@
 # Delivery Tracking Points
 Supports registering, viewing, and updating delivery tracking points.
 
-
 ## View delivery tracking points
 
 **Request**:

@@ -17,5 +17,6 @@ nav:
     - Menu Items: 'api/menu_items.md'
     - Opening Hours: 'api/opening_hours.md'
     - Orders: 'api/orders.md'
+    - Order Items: 'api/order_items.md'
     - Stores: 'api/stores.md'
     - Users: 'api/users.md'

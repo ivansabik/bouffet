@@ -1,7 +1,6 @@
 # Holidays
 Supports registering, viewing, and updating holidays.
 
-
 ## View holidays
 
 **Request**:

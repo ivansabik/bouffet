@@ -6,7 +6,13 @@ from django.views.generic.base import RedirectView
 from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
 
-from .orders.views import CustomerViewSet, DeliveryCourierViewSet, DeliveryTrackingPointViewSet, OrderViewSet
+from .orders.views import (
+    CustomerViewSet,
+    DeliveryCourierViewSet,
+    DeliveryTrackingPointViewSet,
+    OrderItemViewSet,
+    OrderViewSet,
+)
 from .stores.views import HolidayViewSet, MenuCategoryViewSet, MenuItemViewSet, OpeningHourViewSet, StoreViewSet
 from .users.views import UserCreateViewSet, UserViewSet
 
@@ -19,6 +25,7 @@ router.register(r"menu-categories", MenuCategoryViewSet)
 router.register(r"menu-items", MenuItemViewSet)
 router.register(r"opening-hours", OpeningHourViewSet)
 router.register(r"orders", OrderViewSet)
+router.register(r"order-items", OrderItemViewSet)
 router.register(r"stores", StoreViewSet)
 router.register(r"users", UserCreateViewSet)
 router.register(r"users", UserViewSet)

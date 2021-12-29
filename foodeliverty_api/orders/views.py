@@ -1,8 +1,14 @@
 from rest_framework import mixins, viewsets
 
-from .models import Customer, DeliveryCourier, DeliveryTrackingPoint, Order
+from .models import Customer, DeliveryCourier, DeliveryTrackingPoint, Order, OrderItem
 from .permissions import IsUserOrReadOnly
-from .serializers import CustomerSerializer, DeliveryCourierSerializer, DeliveryTrackingPointSerializer, OrderSerializer
+from .serializers import (
+    CustomerSerializer,
+    DeliveryCourierSerializer,
+    DeliveryTrackingPointSerializer,
+    OrderItemSerializer,
+    OrderSerializer,
+)
 
 
 class CustomerViewSet(
@@ -48,4 +54,16 @@ class OrderViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.Retrie
 
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+    permission_classes = (IsUserOrReadOnly,)
+
+
+class OrderItemViewSet(
+    mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet
+):
+    """
+    Updates and retrieves Orders Items
+    """
+
+    queryset = OrderItem.objects.all()
+    serializer_class = OrderItemSerializer
     permission_classes = (IsUserOrReadOnly,)
