@@ -2,7 +2,7 @@
 Supports registering, viewing, and updating menu categories.
 
 
-## View meny categories
+## View menu categories
 
 **Request**:
 

@@ -26,6 +26,7 @@ class Common(Configuration):
         "rest_framework.authtoken",  # token authentication
         "taggit",
         # Your apps
+        "foodeliverty_api.deliveries",
         "foodeliverty_api.stores",
         "foodeliverty_api.users",
     )

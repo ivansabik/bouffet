@@ -6,12 +6,13 @@ from django.views.generic.base import RedirectView
 from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
 
-from foodeliverty_api.stores.models import MenuCategory, MenuItem
-
+from .deliveries.views import DeliveryCourierViewSet, DeliveryTrackingPointViewSet
 from .stores.views import HolidayViewSet, MenuCategoryViewSet, MenuItemViewSet, OpeningHourViewSet, StoreViewSet
 from .users.views import UserCreateViewSet, UserViewSet
 
 router = DefaultRouter()
+router.register(r"delivery-couriers", DeliveryCourierViewSet)
+router.register(r"delivery-tracking-points", DeliveryTrackingPointViewSet)
 router.register(r"holidays", HolidayViewSet)
 router.register(r"menu-categories", MenuCategoryViewSet)
 router.register(r"menu-items", MenuItemViewSet)

@@ -7,9 +7,16 @@
 - courier_contact
 - created_at
 - custom_labels
-- delivery_address
+- delivery_appt_suite_number (audited field)
+- delivery_city (audited field)
 - delivery_contact_phone
 - delivery_fee
+- delivery_lat (audited field)
+- delivery_lon (audited field)
+- delivery_notes (audited field)
+- delivery_street_address (audited field)
+- delivery_tracking_points
+- delivery_zip_code (audited field)
 - device_browser
 - device_ip_address
 - device_os
@@ -31,16 +38,6 @@
 - total_order_amount
 - updated_at
 
-## Courier Contact
-
-- created_at
-- custom_labels
-- first_name
-- id
-- last_name
-- phone_number (audited field)
-- updated_at
-
 ## Customer
 
 - anonymous_id
@@ -53,21 +50,7 @@
 - instagram_url
 - last_name
 - phone_number (audited field)
-- delivery_addresses
 - updated_at
-
-## Address
-
-- appt_suite_number (audited field)
-- city (audited field)
-- custom_labels
-- customer
-- id
-- lat (audited field)
-- lon (audited field)
-- notes (audited field)
-- street_address (audited field)
-- zip_code (audited field)
 
 ## Payment
 
