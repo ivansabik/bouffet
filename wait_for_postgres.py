@@ -24,6 +24,11 @@ def pg_isready(host, user, password, dbname):
         try:
             conn = psycopg2.connect(**vars())
             logger.info("Postgres is ready! ✨ 💅")
+
+            CREATE_SCHEMA = "CREATE SCHEMA IF NOT EXISTS testaurant;"
+            with conn:
+                with conn.cursor() as cursor:
+                    cursor.execute(CREATE_SCHEMA)
             conn.close()
             return True
         except psycopg2.OperationalError:

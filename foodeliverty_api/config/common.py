@@ -9,29 +9,41 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Common(Configuration):
+    SHARED_APPS = [
+        "tenant_schemas",  # mandatory, should always be before any django app
+        "foodeliverty_api.tenants",  # you must list the app where your tenant model resides in
+        "django.contrib.contenttypes",
+        "django.contrib.auth",
+    ]
 
-    INSTALLED_APPS = (
+    TENANT_APPS = [
+        "tenant_schemas",
         "django.contrib.admin",
         "django.contrib.auth",
         "django.contrib.contenttypes",
         "django.contrib.sessions",
         "django.contrib.messages",
         "django.contrib.staticfiles",
-        # Third party apps
         "auditlog",
         "constance",
-        "django_filters",  # for filtering rest endpoints
+        "django_filters",
         "phonenumber_field",
-        "rest_framework",  # utilities for rest apis
-        "rest_framework.authtoken",  # token authentication
+        "rest_framework",
+        "rest_framework.authtoken",
         # Your apps
         "foodeliverty_api.orders",
         "foodeliverty_api.stores",
+        "foodeliverty_api.tenants",
         "foodeliverty_api.users",
-    )
+    ]
+
+    INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
+    DEFAULT_FILE_STORAGE = "tenant_schemas.storage.TenantFileSystemStorage"
+    TENANT_MODEL = "tenants.Client"
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
     MIDDLEWARE = (
+        "tenant_schemas.middleware.TenantMiddleware",
         "django.middleware.security.SecurityMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
         "django.middleware.common.CommonMiddleware",
@@ -58,6 +70,8 @@ class Common(Configuration):
             conn_max_age=int(os.getenv("POSTGRES_CONN_MAX_AGE", 600)),
         )
     }
+    DATABASES["default"]["ENGINE"] = "tenant_schemas.postgresql_backend"
+    DATABASE_ROUTERS = ("tenant_schemas.routers.TenantSyncRouter",)
 
     # General
     APPEND_SLASH = False
@@ -99,6 +113,7 @@ class Common(Configuration):
             },
         },
     ]
+    TEMPLATE_CONTEXT_PROCESSORS = ("django.core.context_processors.request",)
 
     # Set DEBUG to False as a default for safety
     # https://docs.djangoproject.com/en/dev/ref/settings/#debug
