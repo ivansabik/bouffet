@@ -1,8 +1,6 @@
 # foodeliverty
 
-[![Build Status](https://travis-ci.org/poyo-brands/foodeliverty.svg?branch=master)](https://travis-ci.org/poyo-brands/foodeliverty)
-
-The REST API for foodeliverty. Check out the project's [documentation](http://poyo-brands.github.io/foodeliverty/).
+The REST API for foodeliverty.
 
 Foodeliverty is an opinionated ordering and delivery app with first-class support for Machine Learning and Analytics.
 
