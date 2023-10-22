@@ -8,7 +8,6 @@ Foodeliverty focuses on providing core services for orders and delivery operatio
 
 Foodeliverty can be accesed via:
 - Web App (for Admin, Delivery Courier and Customers)
-- Facebook App (only for Customers)
 - Mobile Native App (only for Delivery Courier and Customers)
 
 See the [docs](./docs) section for development instructions.
@@ -16,14 +15,22 @@ See the [docs](./docs) section for development instructions.
 
 - [Docker](https://docs.docker.com/docker-for-mac/install/)  
 
-# Submodules
+# Submodules and features
 
 - Orders
+  - Phone orders
 - Delivery
 - CMS
+  - Create or update menu on Facebook page 
 - Events (as in real-time event streaming and processing)
 
 # Third-party integrations
+
+## Cloud Phones
+
+- CloudTalk
+- Ring Central
+- DialPad
 
 ## Auth
 
@@ -46,12 +53,13 @@ See the [docs](./docs) section for development instructions.
 
 #### Customer Verification
 
-- SendGrid for email
-- Twilio for phone number
+- Email (SMTP, Sendgrid)
+- Phone Number (Twilio)
 
 ## Support and Live Chat
 
 - Embed script (supports tawk.to, Zoho SalesIQ, elfsight and more free-tier)
+
 ## Outgoing Events
 
 - HTTP Webhooks
@@ -63,3 +71,4 @@ See the [docs](./docs) section for development instructions.
 - Predict time to complete order
 - Predict sales
 - Schedule delivery routes
+- Transcribe and search through phone orders
