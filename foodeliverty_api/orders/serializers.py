@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Customer, DeliveryCourier, DeliveryTrackingPoint, Order, OrderItem
+from .models import Customer, Order, OrderItem
 
 
 class CustomerSerializer(serializers.ModelSerializer):
@@ -9,21 +9,7 @@ class CustomerSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class DeliveryCourierSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = DeliveryCourier
-        fields = "__all__"
-
-
-class DeliveryTrackingPointSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = DeliveryTrackingPoint
-        fields = "__all__"
-
-
 class OrderSerializer(serializers.ModelSerializer):
-    delivery_tracking_points = DeliveryTrackingPointSerializer(many=True)
-
     class Meta:
         model = Order
         fields = "__all__"

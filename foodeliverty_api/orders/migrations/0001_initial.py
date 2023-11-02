@@ -11,7 +11,6 @@ import foodeliverty_api.orders.models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -26,9 +25,20 @@ class Migration(migrations.Migration):
                 ("email", models.EmailField(max_length=100)),
                 ("email_verified", models.BooleanField(default=False)),
                 ("first_name", models.CharField(max_length=50)),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("last_name", models.CharField(max_length=50)),
-                ("phone_number", phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None)),
+                (
+                    "phone_number",
+                    phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None),
+                ),
                 ("phone_number_verified", models.BooleanField(default=False)),
                 ("updated_at", models.DateTimeField(auto_now_add=True)),
             ],
@@ -38,9 +48,20 @@ class Migration(migrations.Migration):
             fields=[
                 ("created_at", models.DateTimeField(auto_now_add=True)),
                 ("first_name", models.CharField(max_length=50)),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("last_name", models.CharField(max_length=50)),
-                ("phone_number", phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None)),
+                (
+                    "phone_number",
+                    phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None),
+                ),
                 ("updated_at", models.DateTimeField(auto_now_add=True)),
             ],
         ),
@@ -48,17 +69,37 @@ class Migration(migrations.Migration):
             name="OrderItem",
             fields=[
                 ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("updated_at", models.DateTimeField(auto_now_add=True)),
                 ("notes", models.TextField(blank=True, null=True)),
                 ("quantity", models.PositiveIntegerField(default=1)),
-                ("selected_option", models.CharField(blank=True, max_length=50, null=True)),
-                ("total_amount", models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True)),
-                ("children_items", models.ManyToManyField(blank=True, to="orders.OrderItem")),
+                (
+                    "selected_option",
+                    models.CharField(blank=True, max_length=50, null=True),
+                ),
+                (
+                    "total_amount",
+                    models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),
+                ),
+                (
+                    "children_items",
+                    models.ManyToManyField(blank=True, to="orders.OrderItem"),
+                ),
                 (
                     "menu_item",
                     models.ForeignKey(
-                        blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to="stores.menuitem"
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        to="stores.menuitem",
                     ),
                 ),
             ],
@@ -69,10 +110,19 @@ class Migration(migrations.Migration):
                 ("cancel_reason", models.TextField(blank=True, null=True)),
                 ("cancelled_at", models.DateTimeField(blank=True, null=True)),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("delivery_appt_suite_number", models.CharField(blank=True, max_length=10, null=True)),
+                (
+                    "delivery_appt_suite_number",
+                    models.CharField(blank=True, max_length=10, null=True),
+                ),
                 ("delivery_city", models.CharField(max_length=100)),
-                ("delivery_contact_phone", phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None)),
-                ("delivery_fee", models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True)),
+                (
+                    "delivery_contact_phone",
+                    phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None),
+                ),
+                (
+                    "delivery_fee",
+                    models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),
+                ),
                 ("delivery_lat", models.DecimalField(decimal_places=6, max_digits=9)),
                 ("delivery_lon", models.DecimalField(decimal_places=6, max_digits=9)),
                 ("delivery_notes", models.TextField(blank=True, null=True)),
@@ -81,26 +131,50 @@ class Migration(migrations.Migration):
                 ("fulfilled_at", models.DateTimeField(blank=True, null=True)),
                 (
                     "fulfillment_type",
-                    django_enumfield.db.fields.EnumField(enum=foodeliverty_api.orders.models.OrderFulfillmentType),
+                    django_enumfield.db.fields.EnumField(
+                        enum=foodeliverty_api.orders.models.OrderFulfillmentType
+                    ),
                 ),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("paid_at", models.DateTimeField(blank=True, null=True)),
-                ("ready_for_fulfillment_at", models.DateTimeField(blank=True, null=True)),
+                (
+                    "ready_for_fulfillment_at",
+                    models.DateTimeField(blank=True, null=True),
+                ),
                 ("reject_reason", models.TextField(blank=True, null=True)),
                 ("rejected_at", models.DateTimeField(blank=True, null=True)),
                 ("share_url", models.URLField(blank=True, null=True)),
                 ("started_at", models.DateTimeField(blank=True, null=True)),
                 (
                     "status",
-                    django_enumfield.db.fields.EnumField(default=0, enum=foodeliverty_api.orders.models.OrderStatus),
+                    django_enumfield.db.fields.EnumField(
+                        default=0, enum=foodeliverty_api.orders.models.OrderStatus
+                    ),
                 ),
-                ("tip_amount", models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True)),
-                ("total_order_amount", models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True)),
+                (
+                    "tip_amount",
+                    models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),
+                ),
+                (
+                    "total_order_amount",
+                    models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),
+                ),
                 ("updated_at", models.DateTimeField(auto_now_add=True)),
                 (
                     "delivery_courier",
                     models.ForeignKey(
-                        blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to="orders.deliverycourier"
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        to="orders.deliverycourier",
                     ),
                 ),
                 ("order_items", models.ManyToManyField(to="orders.OrderItem")),
@@ -110,13 +184,25 @@ class Migration(migrations.Migration):
             name="DeliveryTrackingPoint",
             fields=[
                 ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("lat", models.DecimalField(decimal_places=6, max_digits=9)),
                 ("lon", models.DecimalField(decimal_places=6, max_digits=9)),
                 ("updated_at", models.DateTimeField(auto_now_add=True)),
                 (
                     "order",
-                    models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to="orders.order"),
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        to="orders.order",
+                    ),
                 ),
             ],
         ),

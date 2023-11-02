@@ -12,7 +12,6 @@ import foodeliverty_api.stores.models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = []
@@ -32,7 +31,15 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("holiday_name", models.CharField(max_length=50)),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 (
                     "month",
                     models.IntegerField(
@@ -50,7 +57,15 @@ class Migration(migrations.Migration):
             fields=[
                 ("created_at", models.DateTimeField(auto_now_add=True)),
                 ("description", models.TextField(blank=True, null=True)),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("image_url", models.URLField(blank=True, null=True)),
                 ("name", models.CharField(max_length=50)),
                 ("updated_at", models.DateTimeField(auto_now_add=True)),
@@ -60,14 +75,27 @@ class Migration(migrations.Migration):
             name="MenuItem",
             fields=[
                 ("available", models.BooleanField(default=True)),
-                ("cost", models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True)),
+                (
+                    "cost",
+                    models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),
+                ),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
                 ("description", models.TextField(blank=True, null=True)),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("image_url", models.URLField(blank=True, null=True)),
                 (
                     "item_type",
-                    django_enumfield.db.fields.EnumField(default=0, enum=foodeliverty_api.stores.models.MenuItemType),
+                    django_enumfield.db.fields.EnumField(
+                        default=0, enum=foodeliverty_api.stores.models.MenuItemType
+                    ),
                 ),
                 ("name", models.CharField(max_length=50)),
                 ("price", models.DecimalField(decimal_places=2, max_digits=6)),
@@ -77,10 +105,16 @@ class Migration(migrations.Migration):
                 (
                     "category",
                     models.ForeignKey(
-                        blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to="stores.menucategory"
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        to="stores.menucategory",
                     ),
                 ),
-                ("children_items", models.ManyToManyField(blank=True, to="stores.MenuItem")),
+                (
+                    "children_items",
+                    models.ManyToManyField(blank=True, to="stores.MenuItem"),
+                ),
             ],
         ),
         migrations.CreateModel(
@@ -97,7 +131,15 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("end_time", models.TimeField()),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("start_time", models.TimeField()),
                 ("updated_at", models.DateTimeField(auto_now_add=True)),
             ],
@@ -111,15 +153,29 @@ class Migration(migrations.Migration):
                 ("currency", models.CharField(max_length=3)),
                 ("delivery_fee", models.DecimalField(decimal_places=2, max_digits=6)),
                 ("delivery_menu_url", models.URLField(blank=True, null=True)),
-                ("delivery_radius_km", models.DecimalField(decimal_places=2, max_digits=6)),
+                (
+                    "delivery_radius_km",
+                    models.DecimalField(decimal_places=2, max_digits=6),
+                ),
                 ("fullfills_delivery", models.BooleanField(default=True)),
                 ("fullfills_pickup", models.BooleanField(default=True)),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("image_url", models.URLField(blank=True, null=True)),
                 ("lat", models.DecimalField(decimal_places=6, max_digits=9)),
                 ("lon", models.DecimalField(decimal_places=6, max_digits=9)),
                 ("name", models.CharField(max_length=20)),
-                ("phone_number", phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None)),
+                (
+                    "phone_number",
+                    phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None),
+                ),
                 ("street_address", models.CharField(max_length=100)),
                 ("street_number", models.IntegerField()),
                 ("timezone", models.CharField(blank=True, max_length=50, null=True)),

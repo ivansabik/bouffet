@@ -11,7 +11,12 @@ from .serializers import (
 )
 
 
-class StoreViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class StoreViewSet(
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet,
+):
     """
     Updates and retrieves Stores
     """
@@ -22,7 +27,10 @@ class StoreViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.Retrie
 
 
 class HolidayViewSet(
-    mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet,
 ):
     """
     Updates and retrieves Store Holidays
@@ -34,7 +42,10 @@ class HolidayViewSet(
 
 
 class MenuCategoryViewSet(
-    mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet,
 ):
     """
     Updates and retrieves Menu Categories
@@ -46,7 +57,10 @@ class MenuCategoryViewSet(
 
 
 class MenuItemViewSet(
-    mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet,
 ):
     """
     Updates and retrieves Menu Items
@@ -58,7 +72,10 @@ class MenuItemViewSet(
 
 
 class OpeningHourViewSet(
-    mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    viewsets.GenericViewSet,
 ):
     """
     Updates and retrieves Store Opening Hours

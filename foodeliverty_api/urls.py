@@ -8,18 +8,20 @@ from rest_framework.routers import DefaultRouter
 
 from .orders.views import (
     CustomerViewSet,
-    DeliveryCourierViewSet,
-    DeliveryTrackingPointViewSet,
     OrderItemViewSet,
     OrderViewSet,
 )
-from .stores.views import HolidayViewSet, MenuCategoryViewSet, MenuItemViewSet, OpeningHourViewSet, StoreViewSet
+from .stores.views import (
+    HolidayViewSet,
+    MenuCategoryViewSet,
+    MenuItemViewSet,
+    OpeningHourViewSet,
+    StoreViewSet,
+)
 from .users.views import UserCreateViewSet, UserViewSet
 
 router = DefaultRouter()
 router.register(r"customers", CustomerViewSet)
-router.register(r"delivery-couriers", DeliveryCourierViewSet)
-router.register(r"delivery-tracking-points", DeliveryTrackingPointViewSet)
 router.register(r"holidays", HolidayViewSet)
 router.register(r"menu-categories", MenuCategoryViewSet)
 router.register(r"menu-items", MenuItemViewSet)

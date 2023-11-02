@@ -145,7 +145,9 @@ class Common(Configuration):
                 "()": "django.utils.log.ServerFormatter",
                 "format": "[%(server_time)s] %(message)s",
             },
-            "verbose": {"format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"},
+            "verbose": {
+                "format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"
+            },
             "simple": {"format": "%(levelname)s %(message)s"},
         },
         "filters": {
@@ -159,8 +161,15 @@ class Common(Configuration):
                 "class": "logging.StreamHandler",
                 "formatter": "django.server",
             },
-            "console": {"level": "DEBUG", "class": "logging.StreamHandler", "formatter": "simple"},
-            "mail_admins": {"level": "ERROR", "class": "django.utils.log.AdminEmailHandler"},
+            "console": {
+                "level": "DEBUG",
+                "class": "logging.StreamHandler",
+                "formatter": "simple",
+            },
+            "mail_admins": {
+                "level": "ERROR",
+                "class": "django.utils.log.AdminEmailHandler",
+            },
         },
         "loggers": {
             "django": {

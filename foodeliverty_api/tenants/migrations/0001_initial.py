@@ -6,8 +6,19 @@ import tenant_schemas.postgresql_backend.base
 from django.db import migrations, models
 
 
-class Migration(migrations.Migration):
+def _insert_local_development_tenant(apps, _):
+    Client = apps.get_model("tenants", "Client")
+    tenant = Client(
+        domain_url="localhost",
+        schema_name="testaurant",
+        name="Testaurant Inc.",
+        paid_until="3000-12-31",
+        on_trial=False,
+    )
+    tenant.save()
 
+
+class Migration(migrations.Migration):
     initial = True
 
     dependencies = []
@@ -26,7 +37,15 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("id", models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("name", models.CharField(max_length=100)),
                 ("on_trial", models.BooleanField()),
                 ("paid_until", models.DateField(blank=True, null=True)),
@@ -36,4 +55,5 @@ class Migration(migrations.Migration):
                 "abstract": False,
             },
         ),
+        migrations.RunPython(_insert_local_development_tenant),
     ]

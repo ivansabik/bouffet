@@ -40,18 +40,6 @@ class OrderFulfillmentType(enum.Enum):
     DELIVERY = 1
 
 
-class DeliveryCourier(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    first_name = models.CharField(max_length=50)
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    last_name = models.CharField(max_length=50)
-    phone_number = PhoneNumberField()
-    updated_at = models.DateTimeField(auto_now_add=True)
-
-
-auditlog.register(DeliveryCourier)
-
-
 class OrderItem(models.Model):
     children_items = models.ManyToManyField("self", symmetrical=False, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -74,7 +62,6 @@ class Order(models.Model):
     delivery_appt_suite_number = models.CharField(max_length=10, blank=True, null=True)
     delivery_city = models.CharField(max_length=100)
     delivery_contact_phone = PhoneNumberField()
-    delivery_courier = models.ForeignKey(DeliveryCourier, on_delete=models.SET_NULL, blank=True, null=True)
     delivery_fee = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     delivery_lat = models.DecimalField(max_digits=9, decimal_places=6)
     delivery_lon = models.DecimalField(max_digits=9, decimal_places=6)
@@ -100,21 +87,5 @@ class Order(models.Model):
     total_order_amount = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
-    @property
-    def delivery_tracking_points(self):
-        DeliveryTrackingPoint.objects.filter(order=self.id)
-
 
 auditlog.register(Order)
-
-
-class DeliveryTrackingPoint(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    lat = models.DecimalField(max_digits=9, decimal_places=6)
-    lon = models.DecimalField(max_digits=9, decimal_places=6)
-    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
-
-
-auditlog.register(DeliveryTrackingPoint)

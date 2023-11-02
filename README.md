@@ -1,74 +1,35 @@
-# foodeliverty
+# Bouffet
 
-The REST API for foodeliverty.
+## API Endpoints
 
-Foodeliverty is an opinionated ordering and delivery app with first-class support for Machine Learning and Analytics.
+- customers
+- holidays
+- menu-categories
+- menu-items
+- opening-hours
+- orders
+- order-items
+- stores
+- users
 
-Foodeliverty focuses on providing core services for orders and delivery operations and management, while relying on third-party integrations for doing other things.
+## Local development
 
-Foodeliverty can be accesed via:
-- Web App (for Admin, Delivery Courier and Customers)
-- Mobile Native App (only for Delivery Courier and Customers)
+Start the dev server for local development:
 
-See the [docs](./docs) section for development instructions.
-# Prerequisites
+```bash
+docker-compose up
+```
 
-- [Docker](https://docs.docker.com/docker-for-mac/install/)  
+Create a superuser to login to the admin:
 
-# Submodules and features
+```bash
+docker-compose run --rm web ./manage.py tenant_command createsuperuser --schema=testaurant
+```
 
-- Orders
-  - Phone orders
-- Delivery
-- CMS
-  - Create or update menu on Facebook page 
-- Events (as in real-time event streaming and processing)
+Create an auth token for this user which you can use to make requests to the API:
 
-# Third-party integrations
-
-## Cloud Phones
-
-- CloudTalk
-- Ring Central
-- DialPad
-
-## Auth
-
-- Facebook
-- Google
-- Instagram
-
-## Sales promotions
-
-- Voucherify
-
-## Payments
-
-- Stripe
-- PayPal
-
-## Push Notifications
-
-- OneSignal
-
-#### Customer Verification
-
-- Email (SMTP, Sendgrid)
-- Phone Number (Twilio)
-
-## Support and Live Chat
-
-- Embed script (supports tawk.to, Zoho SalesIQ, elfsight and more free-tier)
-
-## Outgoing Events
-
-- HTTP Webhooks
-- Custom Code (via AWS Lambda)
-
-# Machine learning features
-
-- Suggest items in the menu
-- Predict time to complete order
-- Predict sales
-- Schedule delivery routes
-- Transcribe and search through phone orders
+```
+curl --location 'http://localhost:8000/api-token-auth/' \
+--form 'username="admin"' \
+--form 'password="admin"'
+```
