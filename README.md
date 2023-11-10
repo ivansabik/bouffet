@@ -3,7 +3,6 @@
 ## API Endpoints
 
 - customers
-- holidays
 - menu-categories
 - menu-items
 - opening-hours
@@ -23,7 +22,7 @@ docker-compose up
 Create a superuser to login to the admin:
 
 ```bash
-docker-compose run --rm web ./manage.py tenant_command createsuperuser --schema=testaurant
+docker-compose run --rm web ./manage.py tenant_command createsuperuser --schema=pizzaurant
 ```
 
 Create an auth token for this user which you can use to make requests to the API:
@@ -33,3 +32,21 @@ curl --location 'http://localhost:8000/api-token-auth/' \
 --form 'username="admin"' \
 --form 'password="admin"'
 ```
+
+## Models
+
+### orders
+
+- Customer
+- OrderStatus
+- OrderFulfillmentType
+- OrderItem
+- Order
+
+### stores
+
+- MenuCategory
+- MenuItemType
+- MenuItem
+- OpeningHour
+- Store

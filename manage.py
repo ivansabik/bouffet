@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "foodeliverty_api.config")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bouffet.config")
     os.environ.setdefault("DJANGO_CONFIGURATION", "Local")
 
     try:

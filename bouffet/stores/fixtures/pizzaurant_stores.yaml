@@ -1,0 +1,35 @@
+- model: stores.MenuCategory
+  fields:
+    id: 0a787adf-06c7-4b50-a33d-94e90a39b9bb
+    name: Pizzas
+    created_at: 2023-11-10 01:13:26.283103
+    updated_at: 2023-11-10 01:13:26.283103
+- model: stores.MenuCategory
+  fields:
+    id: 33c29337-6366-462e-808e-5f0ab8b74346
+    name: Salads
+    created_at: 2023-11-10 01:13:26.283103
+    updated_at: 2023-11-10 01:13:26.283103
+- model: stores.MenuCategory
+  fields:
+    id: ecdda5de-15b7-4e83-9a37-649cc930fd1c
+    name: Drinks
+    created_at: 2023-11-10 01:13:26.283103
+    updated_at: 2023-11-10 01:13:26.283103
+- model: stores.MenuCategory
+  fields:
+    id: 43edd907-ede4-49be-a412-6c3855282532
+    name: Desserts
+    created_at: 2023-11-10 01:13:26.283103
+    updated_at: 2023-11-10 01:13:26.283103
+
+- model: stores.MenuItem
+  fields:
+    category: 0a787adf-06c7-4b50-a33d-94e90a39b9bb
+    created_at: 2023-11-10 01:13:26.283103
+    id: d2ffaaff-de94-4c55-9583-f0cb1de682e3
+    image_url: https://3.bp.blogspot.com/-4X1fUKAQXgs/U8hoE0HvbzI/AAAAAAAAJUY/srSypOT7nC4/s1600/peachchilechickenpizzalandscapejpg.jpg
+    item_type: 0
+    name: Hatch Pizza
+    price: 12
+    updated_at: 2023-11-10 01:13:26.283103

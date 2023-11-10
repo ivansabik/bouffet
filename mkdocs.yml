@@ -1,6 +1,6 @@
-site_name: foodeliverty_api
-site_description: The REST API for foodeliverty
-repo_url: https://github.com/poyo-brands/foodeliverty
+site_name: bouffet
+site_description: The REST API for Bouffet
+repo_url: https://github.com/poyo-brands/bouffet
 site_dir: site
 copyright: Copyright &copy; 2020, <a href="https://github.com/poyo-brands">poyo-brands</a>.
 dev_addr: 0.0.0.0:8001
@@ -9,10 +9,6 @@ nav:
   - Home: 'index.md'
   - API:
     - Authentication: 'api/authentication.md'
-    - Customers: 'api/customers.md'
-    - Delivery Couriers: 'api/delivery_couriers.md'
-    - Delivery Tracking Points: 'api/delivery_tracking_points.md'
-    - Holidays: 'api/holidays.md'
     - Menu Categories: 'api/menu_categories.md'
     - Menu Items: 'api/menu_items.md'
     - Opening Hours: 'api/opening_hours.md'

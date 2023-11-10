@@ -26,16 +26,6 @@ HTTP 200 OK
     "results": [
         {
             "id": "87a6f496-57c1-4eca-af84-47ca2966617a",
-            "holidays": [
-                {
-                    "id": "00327693-6e8f-4d73-82ac-26f2157851a1",
-                    "created_at": "2021-12-28T23:29:22+0000",
-                    "day": 31,
-                    "holiday_name": "New Year",
-                    "month": 12,
-                    "updated_at": "2021-12-28T23:29:22+0000"
-                }
-            ],
             "menu_items": [
                 {
                     "id": "97b37633-4f6e-493b-b9b8-32829e93b5a6",

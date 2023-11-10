@@ -20,10 +20,12 @@ Markdown==3.3.6
 boto3==1.20.26
 django-storages==1.12.3
 
-# Foodeliverty
+# Used by apps
 django-auditlog==1.0a1
+django-config-models==2.5.1
 django-constance==2.8.0
 django-enumfield==2.0.2
 django-phonenumber-field==6.0.0
+django_tagging==0.5.0
 django-tenant-schemas==1.12.0
 phonenumbers==8.12.40
